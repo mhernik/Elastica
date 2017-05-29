@@ -31,7 +31,6 @@ class Request extends Param
      * @param array      $data       OPTIONAL Data array
      * @param array      $query      OPTIONAL Query params
      * @param Connection $connection
-     * @param string     $contentType Content-Type sent with this request
      *
      * @return \Elastica\Request OPTIONAL Connection object
      */
