@@ -31,10 +31,11 @@ class Request extends Param
      * @param array      $data       OPTIONAL Data array
      * @param array      $query      OPTIONAL Query params
      * @param Connection $connection
+     * @param string     $contentType Content-Type sent with this request
      *
      * @return \Elastica\Request OPTIONAL Connection object
      */
-    public function __construct($path, $method = self::GET, $data = [], array $query = [], Connection $connection = null)
+    public function __construct($path, $method = self::GET, $data = [], array $query = [], Connection $connection = null, $contentType = self::DEFAULT_CONTENT_TYPE )
     {
         $this->setPath($path);
         $this->setMethod($method);
@@ -44,7 +45,7 @@ class Request extends Param
         if ($connection) {
             $this->setConnection($connection);
         }
-        $this->setContentType(self::DEFAULT_CONTENT_TYPE);
+        $this->setContentType($contentType);
     }
 
     /**
